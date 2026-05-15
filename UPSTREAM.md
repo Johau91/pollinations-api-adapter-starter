@@ -2,6 +2,12 @@
 
 This repository can be linked from a Pollinations issue, discussion, or docs pull request without exposing private product code.
 
+Repository:
+
+```text
+https://github.com/Johau91/pollinations-api-adapter-starter
+```
+
 Suggested title:
 
 ```text
