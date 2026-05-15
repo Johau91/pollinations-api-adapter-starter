@@ -1,0 +1,23 @@
+{
+  "name": "pollinations-api-adapter-starter",
+  "version": "0.1.0",
+  "description": "Small, framework-free examples for using the Pollinations OpenAI-compatible API safely.",
+  "type": "module",
+  "private": false,
+  "scripts": {
+    "chat": "node examples/node-chat.js",
+    "translate": "node examples/video-metadata-translation.js",
+    "balance": "node examples/balance-monitor.js"
+  },
+  "keywords": [
+    "pollinations",
+    "ai",
+    "openai-compatible",
+    "metadata-translation",
+    "pollen"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=20"
+  }
+}
