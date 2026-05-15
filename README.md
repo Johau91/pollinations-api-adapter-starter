@@ -2,6 +2,8 @@
 
 Small, framework-free examples for using the Pollinations OpenAI-compatible API from server-side JavaScript.
 
+Demo page: https://johau91.github.io/pollinations-api-adapter-starter/
+
 This repository intentionally contains only generic adapter code and examples. It does not include product code, business logic, user data, payment code, or private application configuration.
 
 ## What It Shows

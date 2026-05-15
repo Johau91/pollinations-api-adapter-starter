@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pollinations API Adapter Starter</title>
+    <meta
+      name="description"
+      content="A small server-side starter for Pollinations chat completions, balance checks, and quota handling."
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        background: #0b0f19;
+        color: #f6f7fb;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at top left, rgba(138, 43, 226, 0.28), transparent 30rem),
+          linear-gradient(135deg, #0b0f19 0%, #121827 100%);
+      }
+
+      main {
+        width: min(920px, calc(100vw - 32px));
+        margin: 0 auto;
+        padding: 72px 0;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 8px 12px;
+        border: 1px solid rgba(255, 255, 255, 0.14);
+        border-radius: 999px;
+        color: #cdb6ff;
+        background: rgba(255, 255, 255, 0.06);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 24px 0 16px;
+        font-size: clamp(42px, 7vw, 76px);
+        line-height: 0.95;
+        letter-spacing: 0;
+      }
+
+      p {
+        color: #bac3d8;
+        font-size: 18px;
+        line-height: 1.7;
+        max-width: 760px;
+      }
+
+      a {
+        color: #d8c6ff;
+      }
+
+      .actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 28px;
+      }
+
+      .button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 44px;
+        padding: 0 18px;
+        border-radius: 10px;
+        border: 1px solid rgba(255, 255, 255, 0.16);
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: 800;
+        background: #7c3aed;
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.08);
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        gap: 14px;
+        margin-top: 44px;
+      }
+
+      .card {
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        border-radius: 12px;
+        padding: 18px;
+        background: rgba(255, 255, 255, 0.055);
+      }
+
+      .card h2 {
+        margin: 0 0 8px;
+        font-size: 18px;
+      }
+
+      .card p {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      pre {
+        overflow-x: auto;
+        margin-top: 36px;
+        padding: 18px;
+        border-radius: 12px;
+        border: 1px solid rgba(255, 255, 255, 0.12);
+        background: rgba(0, 0, 0, 0.34);
+        color: #dbeafe;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="badge">Built with <a href="https://pollinations.ai">pollinations.ai</a></div>
+      <h1>Pollinations API Adapter Starter</h1>
+      <p>
+        A minimal Node.js starter showing server-side Pollinations chat completions, Pollen balance checks,
+        quota handling, and a compact metadata translation workflow.
+      </p>
+
+      <div class="actions">
+        <a class="button" href="https://github.com/Johau91/pollinations-api-adapter-starter">View Source</a>
+        <a class="button secondary" href="https://pollinations.ai">Pollinations</a>
+      </div>
+
+      <section class="grid" aria-label="Features">
+        <div class="card">
+          <h2>OpenAI-Compatible</h2>
+          <p>Uses <code>/v1/chat/completions</code> with a small dependency-free client.</p>
+        </div>
+        <div class="card">
+          <h2>Quota Aware</h2>
+          <p>Handles HTTP 402 responses and parses <code>nextResetAt</code> from the profile endpoint.</p>
+        </div>
+        <div class="card">
+          <h2>Server-Side Keys</h2>
+          <p>Keeps <code>POLLINATIONS_API_KEY</code> in server environments and out of browser bundles.</p>
+        </div>
+      </section>
+
+      <pre><code>const client = createPollinationsClient({
+  apiKey: process.env.POLLINATIONS_API_KEY,
+});
+
+const text = await client.chatText({
+  messages: [{ role: "user", content: "Write a short intro." }],
+});</code></pre>
+    </main>
+  </body>
+</html>
